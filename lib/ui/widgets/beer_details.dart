@@ -22,7 +22,10 @@ class BeerDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Flexible(child: Image.network(beer.imageUrl!)),
+                    Flexible(
+                        child: beer.imageUrl == null
+                            ? const Icon(Icons.wine_bar)
+                            : Image.network(beer.imageUrl!)),
                     Flexible(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
